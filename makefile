@@ -1,8 +1,8 @@
 GPP = g++
 GCC = gcc
 OUTPUT = "bin/hash.so"
-COMPILER_FLAGS = -c -m32 -fPIC -O3 -DLINUX -w -I./include/ -I./include/SDK/amx/
-LIBRARIES = ./lib/libcryptopp.a -lrt -Wl,-Bstatic -lboost_system -lboost_thread -lboost_atomic -lboost_chrono -Wl,-Bdynamic
+COMPILER_FLAGS = -c -m32 -fPIC -O3 -DLINUX -w -I./include/ -I./include/SDK/amx/ -I/opt/boost_1_67_0
+LIBRARIES = -lrt ./lib/libcryptopp.a /opt/boost_1_67_0/stage/lib/libboost_system.a /opt/boost_1_67_0/stage/lib/libboost_thread.a /opt/boost_1_67_0/stage/lib/libboost_atomic.a /opt/boost_1_67_0/stage/lib/libboost_chrono.a
 CRYPTOPP_SRC_DIR = ./src/cryptopp
 
 all: cryptolib hash clean
